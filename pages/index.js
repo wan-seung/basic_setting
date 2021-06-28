@@ -1,21 +1,21 @@
 import styled, { useTheme } from 'styled-components';
-import DefaultLayout from '../ui/layouts/DefaultLayout';
-import { Text } from '../ui/components/Text';
+import DefaultLayout from '../src/layouts/DefaultLayout';
+import Text from '../src/components/Text';
 import { useDispatch, useSelector } from 'react-redux';
 import { getUser, setUser } from '../src/redux/slices/userSlice';
 import React from 'react';
 
-export default function Landing() {
+export default function Home() {
   const theme = useTheme();
   const dispatch = useDispatch();
   const user = useSelector(getUser);
 
-  React.useEffect(() => {
+  useEffect(() => {
     setTimeout(() => {
       dispatch(
         setUser({
           id: 2,
-          username: 'Kevin',
+          username: 'wanie',
         }),
       );
     }, 2000);
@@ -23,7 +23,8 @@ export default function Landing() {
 
   return (
     <Container>
-      <StyledText style={{ margin: '10px 0' }}>You're up and running with NextJS & Redux!</StyledText>
+      <Text />
+      <div style={{ margin: '10px 0' }}>You're up and running with NextJS & Redux!</div>
       <p>
         Logged in as <span style={{ color: theme }}>{`${user.username} (id: ${user.id})`}</span>
       </p>
@@ -39,12 +40,7 @@ const Container = styled.div`
   margin-bottom: 10px;
 `;
 
-const StyledText = styled(Text).attrs({
-  fontSize: 25,
-  regular: true,
-})``;
-
-Landing.Layout = DefaultLayout;
+Home.Layout = DefaultLayout;
 /*
 
 Next js 모든 페이지 사전 렌더링 (Pre-rendering)

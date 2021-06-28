@@ -1,5 +1,5 @@
 import React from 'react';
-import theme from '../src/styles/theme';
+import themes from '../src/styles/themes';
 import GlobalStyle from '../src/styles/Globalstyle';
 import { ThemeProvider } from 'styled-components';
 import { Provider } from 'react-redux';
@@ -10,7 +10,7 @@ function MyApp({ Component, pageProps }) {
 
   return (
     <Provider store={store}>
-      <ThemeProvider theme={theme}>
+      <ThemeProvider theme={themes}>
         <GlobalStyle />
         <Layout>
           <Component {...pageProps} />
