@@ -1,33 +1,17 @@
+import Head from 'next/head';
 import styled, { useTheme } from 'styled-components';
-import DefaultLayout from '../src/layouts/DefaultLayout';
-import Text from '../src/components/Text';
 import { useDispatch, useSelector } from 'react-redux';
 import { getUser, setUser } from '../src/redux/slices/userSlice';
 import React from 'react';
 
-export default function Home() {
+export default function Landing() {
   const theme = useTheme();
   const dispatch = useDispatch();
   const user = useSelector(getUser);
 
-  useEffect(() => {
-    setTimeout(() => {
-      dispatch(
-        setUser({
-          id: 2,
-          username: 'wanie',
-        }),
-      );
-    }, 2000);
-  });
-
   return (
     <Container>
-      <Text />
-      <div style={{ margin: '10px 0' }}>You're up and running with NextJS & Redux!</div>
-      <p>
-        Logged in as <span style={{ color: theme }}>{`${user.username} (id: ${user.id})`}</span>
-      </p>
+      <div>nextjs boiler plate</div>
     </Container>
   );
 }
@@ -40,7 +24,6 @@ const Container = styled.div`
   margin-bottom: 10px;
 `;
 
-Home.Layout = DefaultLayout;
 /*
 
 Next js 모든 페이지 사전 렌더링 (Pre-rendering)

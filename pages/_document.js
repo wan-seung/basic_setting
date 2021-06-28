@@ -1,18 +1,22 @@
-import React from 'react';
-import Document, { Html, Head, Main, NextScript } from 'next/document';
+import Document from 'next/document';
 import { ServerStyleSheet } from 'styled-components';
-class MyDocument extends Document {
+
+export default class MyDocument extends Document {
   static async getInitialProps(ctx) {
     const sheet = new ServerStyleSheet();
     const originalRenderPage = ctx.renderPage;
 
     try {
+      // sheet을 사용해 정의된 모든 스타일을 수집
       ctx.renderPage = () =>
         originalRenderPage({
           enhanceApp: (App) => (props) => sheet.collectStyles(<App {...props} />),
         });
 
+      // Documents의 initial props
       const initialProps = await Document.getInitialProps(ctx);
+
+      // props와 styles를 반환
       return {
         ...initialProps,
         styles: (
@@ -26,18 +30,4 @@ class MyDocument extends Document {
       sheet.seal();
     }
   }
-
-  render() {
-    return (
-      <Html>
-        <Head />
-        <body>
-          <Main />
-          <NextScript />
-        </body>
-      </Html>
-    );
-  }
 }
-
-export default MyDocument;

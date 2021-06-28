@@ -1,9 +1,19 @@
-export const themes = {
-  light: {
-    primary: '#F4A261',
-    text: '#1c1c1c',
-    footerBackground: '#f6f6f6',
-  },
+const size = {
+  mobile: '400px',
+  tablet: '768px',
+  laptopS: '1023px',
+  laptopM: '1239px',
+  desktop: '1240px',
 };
 
-export default themes;
+const theme = {
+  mainColor: '#0055b8',
+  subColor: '#0a4297',
+  mobile: `(max-width): ${size.mobile}`,
+  tablet: `(max-width: ${size.tablet})`,
+  laptopS: `(max-width: ${size.laptopS})`,
+  laptopM: `(max-width: ${size.laptopM})`,
+  desktop: `(min-width: ${size.desktop})`,
+};
+
+export default theme;

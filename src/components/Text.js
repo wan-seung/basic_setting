@@ -2,10 +2,10 @@ import React from 'react';
 import styled from 'styled-components';
 
 export const Text = () => {
-  <div>hello</div>;
+  <TextBox>hello</TextBox>;
 };
 
-const TextBow = styled.div`
+const TextBox = styled.div`
   background-color: black;
 `;
 

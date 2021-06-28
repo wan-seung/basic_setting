@@ -1,16 +1,16 @@
 import React from 'react';
-import themes from '../src/styles/themes';
+import theme from '../src/styles/themes';
 import GlobalStyle from '../src/styles/Globalstyle';
 import { ThemeProvider } from 'styled-components';
-import { Provider } from 'react-redux';
 import store from '../src/redux/store';
+import { Provider } from 'react-redux';
 
 function MyApp({ Component, pageProps }) {
   const Layout = Component.Layout || React.Fragment;
 
   return (
     <Provider store={store}>
-      <ThemeProvider theme={themes}>
+      <ThemeProvider theme={theme}>
         <GlobalStyle />
         <Layout>
           <Component {...pageProps} />

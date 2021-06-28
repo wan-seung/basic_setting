@@ -319,3 +319,5 @@ template {
 }
 
 `;
+
+export default GlobalStyle;
