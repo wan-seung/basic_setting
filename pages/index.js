@@ -2,7 +2,7 @@ import styled, { useTheme } from 'styled-components';
 import DefaultLayout from '../ui/layouts/DefaultLayout';
 import { Text } from '../ui/components/Text';
 import { useDispatch, useSelector } from 'react-redux';
-import { getUser, setUser } from '../redux/slices/userSlice';
+import { getUser, setUser } from '../src/redux/slices/userSlice';
 import React from 'react';
 
 export default function Landing() {
