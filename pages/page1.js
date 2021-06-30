@@ -1,7 +1,9 @@
 import styled from 'styled-components';
 
 const Page1 = () => {
-  return <PageWrapper>hello World</PageWrapper>;
+  console.log(process.env.RESTURL_SESSIONS);
+  console.log(process.env.RESTURL_SPEAKERS);
+  return <PageWrapper>hello World : {process.env.RESTRUL_SESSIONS}</PageWrapper>;
 };
 
 export default Page1;

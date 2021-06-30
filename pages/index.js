@@ -1,16 +1,20 @@
-import Head from 'next/head';
+import React from 'react';
 import styled, { useTheme } from 'styled-components';
 import { useDispatch, useSelector } from 'react-redux';
 import { getUser, setUser } from '../src/redux/slices/userSlice';
-import React from 'react';
+import Text from '../src/components/Text';
 
-export default function Landing() {
+export default function Home() {
   const theme = useTheme();
   const dispatch = useDispatch();
   const user = useSelector(getUser);
 
+  console.log(process.env.RESTURL_SESSIONS);
+  console.log(process.env.RESTURL_SPEAKERS);
+
   return (
     <Container>
+      <Text />
       <div>nextjs boiler plate</div>
     </Container>
   );
